@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-3">
+  <h4>Agregar Sucursal</h4>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="form-control mb-2" name="nombre" placeholder="Nombre" required>
+    <input class="form-control mb-2" name="direccion" placeholder="Dirección">
+    <div class="row">
+      <div class="col"><input class="form-control mb-2" name="ciudad" placeholder="Ciudad"></div>
+      <div class="col"><input class="form-control mb-2" name="estado" placeholder="Estado"></div>
+    </div>
+    <div class="row">
+      <div class="col"><input class="form-control mb-2" name="telefono" placeholder="Teléfono"></div>
+      <div class="col"><input class="form-control mb-2" name="codigo_postal" placeholder="Código Postal"></div>
+    </div>
+    <input class="form-control mb-2" name="email" placeholder="Email" type="email">
+    <label class="form-label">Imagen (opcional)</label>
+    <input class="form-control mb-2" type="file" name="imagen" accept="image/*">
+    <button class="btn btn-primary">Guardar</button>
+    <a href="/sucursales/" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg" style="background:var(--primario);">
+  <div class="container">
+    <a class="navbar-brand text-white" href="/">
+      <i class="fa-solid fa-gamepad"></i> Sistema de Administración Juguetería 0494
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <!-- INICIO -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/">
+            <i class="fa-solid fa-house"></i> Inicio
+          </a>
+        </li>
+
+        <!-- SUCURSALES -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-store"></i> Sucursales
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/sucursales/agregar/">Agregar Sucursal</a></li>
+            <li><a class="dropdown-item" href="/sucursales/">Ver Sucursales</a></li>
+          </ul>
+        </li>
+
+        <!-- CLIENTES -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-user-group"></i> Clientes
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/clientes/agregar/">Agregar Cliente</a></li>
+            <li><a class="dropdown-item" href="/clientes/">Ver Clientes</a></li>
+          </ul>
+        </li>
+
+        <!-- EMPLEADOS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-user-tie"></i> Empleados
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/empleados/agregar/">Agregar Empleado</a></li>
+            <li><a class="dropdown-item" href="/empleados/">Ver Empleados</a></li>
+          </ul>
+        </li>
+
+        <!-- PRODUCTOS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-cube"></i> Productos
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/productos/agregar/">Agregar Producto</a></li>
+            <li><a class="dropdown-item" href="/productos/">Ver Productos</a></li>
+          </ul>
+        </li>
+
+        <!-- CATEGORÍAS -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-tags"></i> Categorías
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/categorias/agregar/">Agregar Categoría</a></li>
+            <li><a class="dropdown-item" href="/categorias/">Ver Categorías</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

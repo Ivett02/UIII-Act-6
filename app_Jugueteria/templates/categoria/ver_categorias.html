@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="text-center text-primary">Categorías</h3>
+<div class="mb-3 text-end"><a href="{% url 'agregar_categoria' %}" class="btn btn-primary">+ Nueva Categoría</a></div>
+<table class="table table-striped">
+  <thead class="table-primary"><tr><th>#</th><th>Nombre</th><th>Material</th><th>Estado</th><th>Fecha</th><th>Acciones</th></tr></thead>
+  <tbody>
+    {% for c in categorias %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ c.nombre }}</td>
+      <td>{{ c.material }}</td>
+      <td>{% if c.estado %}Activo{% else %}Inactivo{% endif %}</td>
+      <td>{{ c.fecha_creacion|date:"Y-m-d H:i" }}</td>
+      <td>
+        <a class="btn btn-sm btn-warning" href="{% url 'actualizar_categoria' c.id %}">Editar</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'borrar_categoria' c.id %}">Borrar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6" class="text-center">No hay categorías.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

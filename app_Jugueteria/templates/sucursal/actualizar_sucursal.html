@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Actualizar Sucursal</h4>
+<form method="post" action="/sucursales/realizar_actualizacion/{{ sucursal.id }}/" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input class="form-control mb-2" name="nombre" value="{{ sucursal.nombre }}">
+  <input class="form-control mb-2" name="direccion" value="{{ sucursal.direccion }}">
+  <div class="row">
+    <div class="col"><input class="form-control mb-2" name="ciudad" value="{{ sucursal.ciudad }}"></div>
+    <div class="col"><input class="form-control mb-2" name="estado" value="{{ sucursal.estado }}"></div>
+  </div>
+  <div class="row">
+    <div class="col"><input class="form-control mb-2" name="telefono" value="{{ sucursal.telefono }}"></div>
+    <div class="col"><input class="form-control mb-2" name="codigo_postal" value="{{ sucursal.codigo_postal }}"></div>
+  </div>
+  <input class="form-control mb-2" name="email" value="{{ sucursal.email }}" type="email">
+  <label class="form-label">Imagen (opcional)</label>
+  <input class="form-control mb-2" type="file" name="imagen" accept="image/*">
+  {% if sucursal.imagen %}
+    <p>Imagen actual:</p>
+    <img src="{{ sucursal.imagen.url }}" style="max-width:200px;">
+  {% endif %}
+  <button class="btn btn-primary">Guardar cambios</button>
+  <a href="/sucursales/" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

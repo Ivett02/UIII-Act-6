@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-lg border-0 rounded-3">
+    <div class="row g-0 align-items-center p-4">
+      <div class="col-md-8">
+        <h2 class="fw-bold text-primary">Bienvenido al sistema de administración</h2>
+        <h4 class="text-secondary">Juguetería 0494</h4>
+        <p class="mt-3">
+          Desde este panel podrás gestionar toda la información de tu juguetería:
+        </p>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item">🏬 <strong>Sucursales:</strong> administra direcciones, ciudades y estados.</li>
+          <li class="list-group-item">🧍‍♂️ <strong>Empleados:</strong> controla el personal de cada sucursal.</li>
+          <li class="list-group-item">👥 <strong>Clientes:</strong> registra y actualiza información de tus compradores.</li>
+          <li class="list-group-item">🎁 <strong>Productos:</strong> organiza tus juguetes y su stock.</li>
+          <li class="list-group-item">🏷️ <strong>Categorías:</strong> clasifica tus productos por tipo o material.</li>
+        </ul>
+        <p class="text-muted small">
+          Usa el menú superior para navegar entre las secciones.
+        </p>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <img src="/media/jugueteria.jpg" alt="Juguetería 0494" class="img-fluid rounded-4 shadow-sm">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

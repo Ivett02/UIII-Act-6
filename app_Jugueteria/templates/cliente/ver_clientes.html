@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="text-center text-primary">Clientes</h3>
+
+<div class="mb-3 text-end">
+    <a href="{% url 'agregar_cliente' %}" class="btn btn-primary">+ Nuevo Cliente</a>
+</div>
+
+<table class="table table-striped table-hover shadow-sm bg-white">
+    <thead class="table-primary">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Sucursal</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in clientes %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ c.nombre }} {{ c.apellido }}</td>
+            <td>{% if c.edad %}{{ c.edad }}{% else %}-{% endif %}</td>
+            <td>{% if c.telefono %}{{ c.telefono }}{% else %}-{% endif %}</td>
+            <td>{% if c.email %}{{ c.email }}{% else %}-{% endif %}</td>
+            <td>{% if c.id_sucursal %}{{ c.id_sucursal.nombre }}{% else %}-{% endif %}</td>
+            <td>{% if c.direccion %}{{ c.direccion }}{% else %}-{% endif %}</td>
+            <td>
+                <a class="btn btn-sm btn-warning" href="{% url 'actualizar_cliente' c.id %}">Editar</a>
+                <a class="btn btn-sm btn-danger" href="{% url 'borrar_cliente' c.id %}">Borrar</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="8" class="text-center">No hay clientes registrados.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

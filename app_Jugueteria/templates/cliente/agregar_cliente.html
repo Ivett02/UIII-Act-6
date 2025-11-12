@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="text-center text-primary">Agregar Cliente</h3>
+
+<form method="POST" class="card p-4 shadow-sm bg-white">
+    {% csrf_token %}
+    <div class="row g-2">
+        <div class="col-md-6">
+            <label class="form-label">Nombre</label>
+            <input name="nombre" class="form-control" placeholder="Nombre">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Apellido</label>
+            <input name="apellido" class="form-control" placeholder="Apellido">
+        </div>
+    </div>
+
+    <div class="row g-2 mt-2">
+        <div class="col-md-4">
+            <label class="form-label">Edad</label>
+            <input name="edad" type="number" class="form-control" placeholder="Edad">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Teléfono</label>
+            <input name="telefono" class="form-control" placeholder="Teléfono">
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Email</label>
+            <input name="email" type="email" class="form-control" placeholder="Correo electrónico">
+        </div>
+    </div>
+
+    <div class="mt-2">
+        <label class="form-label">Dirección</label>
+        <input name="direccion" class="form-control" placeholder="Dirección">
+    </div>
+
+    <div class="mt-2">
+        <label class="form-label">Sucursal</label>
+        <select name="id_sucursal" class="form-select">
+            <option value="">-- Seleccionar Sucursal --</option>
+            {% for s in sucursales %}
+            <option value="{{ s.id }}">{{ s.nombre }} — {{ s.ciudad }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mt-3 text-end">
+        <button class="btn btn-success">Guardar</button>
+        <a href="{% url 'ver_clientes' %}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

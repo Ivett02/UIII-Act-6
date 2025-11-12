@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Eliminar Sucursal</h4>
+<p>¿Confirma que desea borrar la sucursal <strong>{{ sucursal.nombre }}</strong> (ID: {{ sucursal.id }})?</p>
+<form method="post">{% csrf_token %}
+  <button class="btn btn-danger">Sí, borrar</button>
+  <a href="/sucursales/" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
